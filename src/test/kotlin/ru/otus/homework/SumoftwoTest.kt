@@ -26,4 +26,25 @@ class SumoftwoTest {
             sumOfTwo(intArrayOf(3, 2), 6)
         }
     }
+
+    /**
+     * Кейс для пустого массива
+     * */
+    @Test
+    fun `testcase 4`() {
+        assertThrows<IllegalArgumentException> {
+            sumOfTwo(IntArray(0), 0)
+        }
+    }
+
+
+    /**
+     * Кейс когда числа дающие target находятся не на смежных индексах массива numbers
+     * */
+    @Test
+    fun `testcase 5`() {
+        val actual = sumOfTwo(intArrayOf(3, 2, 3), 6)
+        val expected = intArrayOf(0, 2)
+        assertArrayEquals(expected, actual)
+    }
 }
